@@ -1,25 +1,23 @@
-#introduction
+#define/class piglatintranslator()
 #asks for raw_input()
 def piglatintranslator():
     print "Hi! This is a Pig Latin translator."
-    my_input = raw_input("Please input a word in English and we'll translate it for you to Pig Latin: ")
+    my_input = raw_input("Please input one word in English: ")
 
-#checks if its a word or not 
+    #checks if its a word or not 
     if len(my_input) > 0 and my_input.isalpha():
         print "The English word you have entered is: " + my_input
     else:
         print "You have not entered a word. Please try all over again."
+        #runs piglatintranslator() again from the beginning
         piglatintranslator()
 
-    piglatin = 'ay'
     word = my_input.lower()
-    first_letter = word[0]
-
-    new_word = word + first_letter + piglatin
-
+    new_word = word + word[0] + 'ay'
     new_word = new_word[1:len(new_word)]
 
     print my_input + " in Pig Latin is '" + new_word + "'"
+
 
 #run the pig latin translator
 piglatintranslator()
