@@ -29,11 +29,11 @@ square(10)
 
 
 """Exponents"""
-def power(base, exponent):  # Add your parameters here!
+def power(base, exponent): 
     result = base**exponent
     print "%d to the power of %d is %d." % (base, exponent, result)
 
-power(37,4)  # Add your arguments here!
+power(37,4) 
 
 
 
@@ -99,3 +99,55 @@ def reverse(text):
     return reverse_text
     
  
+"""Removing all Vowels in a String"""
+def anti_vowel(text):
+    vowels = "aeiouAEIOU"
+    antivowel_string = "" 
+    
+    for letter in text:
+        if letter not in vowels:
+            antivowel_string += letter
+    
+    return antivowel_string
+
+print anti_vowel("Hey You!")
+
+
+
+"""Adding up Scrabble Word Scores"""
+score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+         "x": 8, "z": 10}
+
+def scrabble_score(word):
+    score_total = 0 #scrabble score total of the scrabble word
+    word = word.lower() #transforms the word to lowercase letters
+    for i in word: 
+        score_total += score[i]
+    return score_total
+    
+print scrabble_score("acb") #should print 1+3+3=7
+
+
+
+"""Censoring words"""
+#simple solution to censoring swear words
+#should return the 'text' with the 'word' replaced with asterisks
+#assume your input strings won't contain punctuation or upper case letters
+def censor(text, word):
+    word_length = len(word)
+    new_word = ""
+    
+    while word_length > 0:
+        new_word += '*'
+        word_length -= 1
+    
+    return text.replace(word, new_word)
+    
+print censor("fuck man come check this fuck out", "fuck")
+
+
+
+"""
