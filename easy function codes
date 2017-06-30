@@ -150,4 +150,53 @@ print censor("fuck man come check this fuck out", "fuck")
 
 
 
-"""
+"""Count Method"""
+#counts the number of times an item occurs in the list
+def count(sequence, item):
+    result = 0
+    for i in sequence:
+        if i == item:
+            result += 1
+    return int(result)
+
+print count([1,2,1,1], 1) #should return 3
+print count(['a', 'b', 'a', 'a'], 'a') #should also return 3
+
+
+
+"""Removes all Odd Numbers in a List"""
+#removes all odd numbers in the list and returns the result
+def purify(listofnumbers):
+    new_list = []
+    for i in listofnumbers:
+        if i % 2 == 0:
+            new_list.append(i)
+    return new_list
+
+print purify([1,2,3]) # returns [2]
+
+
+
+"""Multiplying a list of Numbers"""
+def product(integers):
+    multipled = []
+    result = 1
+    for i in integers:
+        result *= i
+    return int(result)
+
+print product([4,5,5])
+print product([0,3,2])
+
+
+
+"""Removing Duplicates in a List"""
+def remove_duplicates(inputlist):
+    new_list = []
+    for i in inputlist:
+        if i not in new_list:
+            new_list.append(i)
+    return new_list
+
+print remove_duplicates([1,1,2,2])
+print remove_duplicates(['a', 'a', 'b', 'b'])
