@@ -287,4 +287,16 @@ even_squares = [x**2 for x in range(1,12) if x % 2 == 0]
 cubes_by_four = [x**3 for x in range (1,11) if (x**3) % 4 == 0]
 # =>[8, 64, 216, 512, 1000]
 
-""" 
+
+
+"""Lambda Expressions"""
+my_list = range(16)
+filter(lambda x: x % 3 == 0, my_list)
+
+garbled = "IXXX aXXmX aXXXnXoXXXXXtXhXeXXXXrX sXXXXeXcXXXrXeXt mXXeXsXXXsXaXXXXXXgXeX!XX"
+message = filter(lambda x: x != "X", garbled)
+print message
+
+
+
+"""
